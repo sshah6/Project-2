@@ -18,7 +18,7 @@ var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
 //passport set-up
-app.use(session({secret: 'mySecretKey', resave: true, saveUninitialized: true }));
+app.use(session({ secret: 'mySecretKey', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -46,7 +46,7 @@ require("./routes/html_routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+    app.listen(PORT, function() {
+        console.log("App listening on PORT " + PORT);
+    });
 });
