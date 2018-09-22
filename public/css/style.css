@@ -1,3 +1,72 @@
-.list-group-item {
-  line-height: 2.5;
+html{
+    background: #29443d;
+}
+.box{
+/* width: 200px;
+height: 200px; */
+/* border:1px black solid; */
+overflow:auto;
+}
+
+.uk-open>.uk-modal-dialog {
+    opacity: 1;
+    transform: translateY(0);
+    border-radius: 10px;
+}
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: #3f6316;
+}
+.uk-navbar-nav>li>a {
+    color: rgb(255, 255, 255);
+    /* text-transform: uppercase;
+    transition: .1s ease-in-out;
+    transition-property: color,background-color; */
+}
+
+.uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a.uk-open, .uk-navbar-nav>li>a:focus {
+    color: #353535;
+    outline: 0;
+}
+
+.uk-navbar-nav>li>a:active {
+    color: #333;
+}
+.uk-logo {
+    font-size: 1.5rem;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    color: #820808;
+}
+
+.uk-logo:hover {
+    color: rgba(255,255,255,.9);
+    outline: 0;
+    text-decoration: none;
+}
+.uk-grid-item-match>:not([class*=uk-width]), .uk-grid-match>*>:not([class*=uk-width]) {
+    box-sizing: border-box;
+    width: 100%;
+    flex: auto;
+    border-radius: 10px;
+}
+
+.uk-box-shadow-medium {
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    border-radius: 10px;
+}
+   
+/* .spacer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
+
+.footer{
+    margin-top:20px;
+
+}
+/* .footer-descrip {
+    font-size: 2rem;
+    float: top;
+} */
+.cardBody {
+    margin-bottom: 2rem;
 }
