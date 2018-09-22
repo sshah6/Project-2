@@ -1,8 +1,32 @@
-<div class="container">
-  <div class="jumbotron mt-4">
-    <h1 class="display-4 text-center">404 Not Found
-      <span role="img" aria-label="Face with rolling eyes">🙄</span>
-    </h1>
-    <a href="/">← Back To Home</a>
-  </div>
+{{!-- <a href="#sign-up" uk-toggle>Sign Up</a> --}}
+
+<!-- This is the modal -->
+<div id="sign-up" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Health Book</h2>
+         <legend class="uk-legend">Sign Up</legend>
+        <form class="signup">
+             <div class="uk-margin">
+            <input class="uk-input" id="email-input" type="text" placeholder="Email">
+        </div> 
+        <div class="uk-margin">
+            <input class="uk-input" id="password-input" type="password" placeholder="Password">
+        </div>
+        {{!-- <div class="uk-margin">
+            <input class="uk-input" id="passConfirm" type="text" placeholder="Confirm Password">
+        </div> --}}
+        
+         <p class="uk-text-center">
+            <button class="uk-button uk-button-default uk-modal-close" type="button"><a href = "/views/login.handlebars">Cancel</a></button>
+            <button class="uk-button uk-button-primary" type="sumbit">Sign Up</button>
+        </p>
+        </form>
+    </div>
 </div>
+
+<script>
+    $('#sign-up').addClass('uk-open').show();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script type="text/javascript" src="js/signup.js"></script>
