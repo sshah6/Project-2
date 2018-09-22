@@ -1,34 +1,49 @@
-//var db = require("../models");
-var isAuthenticated = require('../config/middleware/isAuthenticated.js');
+// var express = require("express");
+// var app = express();
 
+// var port = 3306;
 
-module.exports = function(app) {
-    // Load index page
+var isAuthenticated = require('../config/middleware/isAuthenticated.js')
+
+//homepage 
+module.exports = function(app){
+    // app.get("/", function(req, res){
+    //     res.render("login");
+    // })
+
     app.get("/", function(req, res) {
-        //db.Example.findAll({}).then(function(dbExamples) {
+        // If the user already has an account send them to the members page
+        // if (req.user) {
+        //   res.redirect("index");
+        // }
         res.render("login");
-        //msg: "Welcome!",
-        //examples: dbExamples
-
     });
 
-
-    // Load example page and pass in an example by id
-    //app.get("/example/:id", function(req, res) {
     app.get("/signup", function(req, res) {
-        //db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-        res.render("sign-up", {
-            //example: dbExample
-        });
+        // If the user already has an account send them to the members page
+        // if (req.user) {
+        //   res.redirect("index");
+        // }
+        res.render("sign-up");
     });
 
-
-    // Render 404 page for any unmatched routes
-    //app.get("*", function(req, res) {
-    //res.render("404");
-    //});
-
-    app.get("/home", isAuthenticated, function(req, res) {
+    app.get("/home", isAuthenticated, function(req, res){
         res.render("index");
     });
 };
+
+
+//API endpoints for appointments 
+
+    //GET user appointments 
+    //POST user appointments 
+        
+//API endpoints for ?
+
+    //GET alergies 
+    //POST new allergies 
+
+//API Endpoints for ?
+
+    //GET vaccinations 
+    //POST vacciantions 
