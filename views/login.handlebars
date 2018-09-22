@@ -1,19 +1,38 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Example</h5>
-          <p>
-            <strong>ID</strong>: {{example.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{example.text}}</p>
-          <p>
-            <strong>Description:</strong> {{example.description}}</p>
-            <a href="/">← Back To Home</a>
+<!-- This is a button toggling the modal -->
+{{!-- <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Open</button> --}}
+
+<!-- This is an anchor toggling the modal -->
+{{!-- <a href="#modal-example" uk-toggle>Sign In</a> --}}
+
+
+<!-- This is the modal -->
+<div id="login" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Health Book</h2>
+         <legend class="uk-legend">Log In</legend>
+
+        <form class="login">
+            <div class="uk-margin">
+            <input class="uk-input" id="email-input" type="text" placeholder="Email">
         </div>
-      </div>
+        <div class="uk-margin">
+            <input class="uk-input" id="password-input" type="password" placeholder="Password">
+        </div>
+         <p class="uk-text-center">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="submit">Log In</button>
+        </p>
+        <p class="uk-text-center">
+            <hr>or 
+           <a href="signup">Sign Up</a> 
+        </p>
+        </form>
     </div>
-  </div>
 </div>
+
+<script>
+    $('#login').addClass('uk-open').show();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
