@@ -1,33 +1,411 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
+<div uk-sticky>
+    <nav class="uk-navbar-container uk-margin navBar" uk-navbar>
+        <div class="uk-navbar-center">
+
+            <div class="uk-navbar-center-left"><div>
+                <ul class="uk-navbar-nav">
+                    <li><a href="#history">My Body</a></li>
+                    <li><a href="#appt">Appointments</a></li>
+                </ul>
+            </div></div>
+            {{!-- add git fork icon for the logo --}}
+            <h3 class="uk-text-center">Health</h3>
+            <a class="uk-navbar-item uk-logo" href="#hob" uk-icon="icon: git-fork; ratio: 3.5"></a>
+            <h3 class="uk-text-center">Book</h3>
+            <div class="uk-navbar-center-right"><div>
+                <ul class="uk-navbar-nav">
+                    <li><a href="#medication">Medication</a></li>
+                    <li><a href="#insure">Insurance Information</a></li>
+                </ul>
+            </div></div>
+
+        </div>
+        <div class="uk-navbar-right">
+
+            <ul class="uk-navbar-nav">
+                <li><a href="/">Logout</a></li>
+            </ul>
+
+        </div>
+    </nav>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="uk-container uk-center" id ="history">
+
+
+
+    {{!-- <div class="uk-child-width-expand@s uk-box-shadow-large" uk-grid> --}}
+        <div class="uk-grid-item-match uk-box-shadow-large">
+            <div class="uk-card uk-card-default uk-card-body">
+                <div class="uk-child-width-expand@s" uk-grid>
+                    <div>
+                        <div class="">
+                            <h2 class="uk-margin-remove">My Body</h2>
+                            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                {{!-- <li><a href="#">12 days ago</a></li>
+                                <li><a href="#">Reply</a></li> --}}
+                            </ul>
+                        </div>
+                         
+                            <p>
+                                Health Book is a company that will ensure you can keep your personal health in tact, while dealing with the hustle and bustle of everyday life. Information such as vaccine history or your last checkup may not seem overly important, but without it we subject ourselves to uninformed professionals, resulting in questionable medical procedures. With Health Book you can keep all your health information at your finger tips, including, but not limited to, setting up new appointments and a list of medications you are allergic to. Here at Health Book we strive to minimize the amount of medical mixups, regardless of how serious or trivial they may be.
+                            </p>
+                    </div>
+                        <div class="uk-grid-item-match">
+                            <div class="uk-card uk-card-default uk-card-body uk-box-shadow-medium">
+                                <h3><span uk-icon="icon: history"></span> History of Body</h3>
+                                
+                                <div class="uk-container" >
+                                    <!-- This is the modal -->
+                                    <div id="hob" uk-modal>
+                                        <div class="uk-modal-dialog uk-modal-body">
+                                            <h2 class="uk-modal-title">History</h2>
+                                            <legend class="uk-legend"></legend>
+
+                                            <form class = 'medHistory'>
+                                                <div class="uk-margin">
+                                                    <input class="uk-input" id="medHistoryEvent" type="text" placeholder="Event">
+                                                </div>
+                                            <div class="uk-margin">
+                                                {{!-- this willl use the materalize date picker --}}
+                                                <input class="uk-input" id="medHistoryDate" type="date" placeholder="Date"> 
+                                            </div>
+                                            <p class="uk-text-center">
+                                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                                <button class="uk-button uk-button-primary" type="submit">Add</button>
+                                            </p>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="">
+                                        {{!-- <div class="uk-card uk-card-large uk-card-default uk-card-body"> --}}
+
+                                            <div class="uk-panel uk-panel-scrollable">
+                                                <ul class="uk-list history">
+                                                    
+                                                </ul>
+
+
+                                            </div>
+                                            {{!-- <ul class="uk-list uk-list-large uk-list-divider history" "new-hob">
+                                            
+                                            </ul> --}}
+
+                                        {{!-- </div> --}}
+                                    </div>
+                                    {{!-- add icons here --}}
+                                    <a href="#hob" uk-toggle> Add History</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+       
+    <hr class="uk-divider-icon">
+        
+
+    {{!-- </div> --}}
+
+    <div class="uk-container" >
+        
+
+        <!-- This is the modal -->
+        <div id="hob" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">History</h2>
+                <legend class="uk-legend"></legend>
+
+                <form class = 'medHistory'>
+                    <div class="uk-margin">
+                        <input class="uk-input" id="medHistoryEvent" type="text" placeholder="Event">
+                    </div>
+                <div class="uk-margin">
+                    {{!-- this willl use the materalize date picker --}}
+                    <input class="uk-input" id="medHistoryDate" type="date" placeholder="Date"> 
+                </div>
+                <p class="uk-text-center">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                    <button class="uk-button uk-button-primary" type="submit">Add</button>
+                </p>
+                </form>
+            </div>
+        </div>
+        
+    </div> 
+    
+</div>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div class="uk-container uk-center" id="appt">
+    
+
+
+
+    <article class="uk-comment uk-comment-primary uk-box-shadow-medium">
+            <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    {{!-- <img class="uk-comment-avatar" src="../docs/images/avatar.jpg" width="80" height="80" alt=""> --}}
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class=" uk-margin-remove uk-text-center"><span uk-icon="icon: calendar"></span> Fix My Body</h3>
+                    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                        {{!-- <li><a href="#">12 days ago</a></li> --}}
+                        {{!-- <li><a href="#">Reply</a></li> --}}
+                    </ul>
+                </div>
+            </header>
+           <div class="">
+                {{!-- <div class="uk-card uk-card-large uk-card-default uk-card-body"> --}}
+                
+                   <div class="uk-panel uk-panel-scrollable ">
+                        <ul class="uk-list appointment">
+                            
+                        </ul>
+                        
+
+                    </div>
+                {{!-- </div> --}}
+            </div>
+            <a href="#apptmodal" uk-toggle> Add Appointment</a>
+    </article>
+    <hr class="uk-divider-icon">
+
+
+
+
+
+<!-- This is the modal -->
+<div id="apptmodal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Appt</h2>
+         <legend class="uk-legend"></legend>
+
+        <form class = 'appt' method="POST" action="/create_appt">
+            <div class="uk-margin">
+            <input class="uk-input" id="apptDate" type="date" placeholder="Date">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" id="apptTime" type="time" placeholder="Time">
+        </div>
+        <div class="uk-margin">
+            {{!-- picker --}}
+            <input class="uk-input" id="apptType" type="text" placeholder="Type">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" id="apptReason" type="text" placeholder="Reason">
+        </div>
+         <p class="uk-text-center">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="submit">Add</button>
+        </p>
+        </form>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="uk-container uk-center"  id="medication">
+    
+
+
+        
+        <div class="uk-grid-item-match uk-box-shadow-large">
+            <div class="uk-card uk-card-default uk-card-body">
+                <div class="uk-child-width-expand@s" uk-grid>
+                    <div class="uk-grid-item-match uk-box-shadow-medium">
+                        <div class="uk-card uk-card-default uk-card-body cardBody">
+                            <h3><span uk-icon="icon: refresh"></span>Medicate My Body</h3>
+                            <div class="box">
+                                <div class="uk-panel uk-panel-scrollable ">
+                                    <ul class="uk-list medication">
+                                        
+                                    </ul>
+                                    
+
+                                </div>
+                            </div>
+                            <a href="#meds" uk-toggle > Add Medication</a>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <h3><span uk-icon="icon: info"></span> Insure My Body</h3>
+                        <div class="box">
+                            <div class="uk-panel uk-panel-scrollable ">
+                                <ul class="uk-list insurance">
+                                    
+                                </ul> 
+
+                            </div>
+                        </div>
+                        <a href="#insure" uk-toggle> Add Insurance</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+<!-- This is the modal -->
+    <div id="meds" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">meds</h2>
+            <legend class="uk-legend"></legend>
+
+            <form class = 'meds'>
+                <div class="uk-margin">
+                <input class="uk-input" id="medName" type="text" placeholder="Name">
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input" id="medPerscription" type="text" placeholder="Perscription ?">
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input" id="medCondition" type="text" placeholder="Condition">
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input" id="medDose" type="text" placeholder="Dose">
+            </div>
+            <p class="uk-text-center">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                <button class="uk-button uk-button-primary" type="submit">Save</button>
+            </p>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="uk-container uk-center" id="insure">
+    
+<!-- This is the modal -->
+<div id="insure" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Insurance</h2>
+         <legend class="uk-legend"></legend>
+
+        <form class = 'insurance'>
+            <div class="uk-margin">
+            <input class="uk-input" id="insuranceType" type="text" placeholder="Type">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" id="insuranceCarrier" type="text" placeholder="Carrier">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" id="insuranceName" type="text" placeholder="Name">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" id="insuranceIdNumber" type="number" placeholder="id number">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" id="insuranceGroupId" type="number" placeholder="group id">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" id="insuranceEffectiveDate" type="date" placeholder="effective date">
+        </div>
+         <p class="uk-text-center">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="submit">Save</button>
+        </p>
+        </form>
+    </div>
+</div>
+
+</div>
+
+<article class="uk-comment uk-comment-primary footer">
+    <h2>Health Book</h2>
+    <p class ="uk-text-center footer-descrip">For more information about the creators:</p>
+    <div class="uk-child-width-1-4@s" uk-grid>
+        <div>
+            <div class="uk-panel">
+                *:
+                <a href="" uk-icon="icon: github"></a>
+                <a href="" uk-icon="icon: linkedin"></a>
+
+            </div>
+        </div>
+        <div>
+            <div class="uk-panel">
+                *: 
+                <a href="" uk-icon="icon: github"></a>
+                <a href="" uk-icon="icon: linkedin"></a>
+            </div>
+        </div>
+        <div>
+            <div class="uk-panel">
+                *: 
+                <a href="" uk-icon="icon: github"></a>
+                <a href="" uk-icon="icon: linkedin"></a>
+            </div>
+        </div>
+        <div>
+            <div class="uk-panel">
+                *: 
+                <a href="" uk-icon="icon: github"></a>
+                <a href="" uk-icon="icon: linkedin"></a>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/logic.js"></script>
+<script type="text/javascript" src="js/history.js"></script>
+<script type="text/javascript" src="js/appt.js"></script>
+<script type="text/javascript" src="js/meds.js"></script>
+<script type="text/javascript" src="js/insure.js"></script>
+
+<script>
+     $(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+    console.log(this);
+
+    // scrollTop - returns the position of the given element.
+    // animate - perform a custom animation of a set of CSS properties.
+    $('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top
+    }, 1500);
+
+    console.log($.attr(this, 'href')); //returns attribute
+
+  });
+   
+
+ 
+</script>
