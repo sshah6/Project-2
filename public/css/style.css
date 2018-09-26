@@ -1,11 +1,20 @@
 html{
-    background: #29443d;
+    background: rgba(202, 201, 201, 0.699);
 }
+
 .box{
 /* width: 200px;
 height: 200px; */
 /* border:1px black solid; */
 overflow:auto;
+}
+
+.uk-panel{
+    background-color: rgba(202, 201, 201, 0.493);
+}
+.fa-heartbeat{
+    font-size: 1in;
+    color: rgba(255, 0, 0, 0.603);
 }
 
 .uk-open>.uk-modal-dialog {
@@ -14,7 +23,7 @@ overflow:auto;
     border-radius: 10px;
 }
 .uk-navbar-container:not(.uk-navbar-transparent) {
-    background: #3f6316;
+    background:rgba(105, 255, 243, 0.356);
 }
 .uk-navbar-nav>li>a {
     color: rgb(255, 255, 255);
@@ -53,7 +62,7 @@ overflow:auto;
     box-shadow: 0 5px 15px rgba(0,0,0,.08);
     border-radius: 10px;
 }
-   
+
 /* .spacer {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -69,4 +78,8 @@ overflow:auto;
 } */
 .cardBody {
     margin-bottom: 2rem;
+}
+
+.uk-card{
+    margin-top: 10px;
 }

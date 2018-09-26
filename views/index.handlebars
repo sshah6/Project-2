@@ -1,45 +1,42 @@
+
 <div uk-sticky>
-    <nav class="uk-navbar-container uk-margin navBar" uk-navbar>
-        <div class="uk-navbar-center">
-
-            <div class="uk-navbar-center-left"><div>
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <div class="uk-navbar-left"><div>
+                
                 <ul class="uk-navbar-nav">
-                    <li><a href="#history">My Body</a></li>
-                    <li><a href="#appt">Appointments</a></li>
+                    <li><a class="uk-hidden@m uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+                    <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#history">My Body</a></li>
+                        <li class="uk-active"><a href="#appt">Appointments</a></li>
+                        <li class="uk-active"><a href="#medication">Medication</a></li>
+                        <li class="uk-active"><a href="#insure">Insurance Information</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="/">Logout</a></li>
+                    </ul>
+                </div></li>
+                    <li><a class="uk-visible@m uk-text-primary" href="#history">My Body</a></li>
+                    <li><a class="uk-visible@m uk-text-primary"  href="#appt">Appointments</a></li>
+                    <li><a class="uk-visible@m uk-text-primary"  href="#medication">Medication</a></li>
+                    <li><a class="uk-visible@m uk-text-primary"  href="#insure">Insurance Information</a></li>
+                    <li><a class="uk-visible@m uk-text-primary"  href="/">Logout</a></li>
                 </ul>
             </div></div>
-            {{!-- add git fork icon for the logo --}}
-            <h3 class="uk-text-center">Health</h3>
-            <a class="uk-navbar-item uk-logo" href="#hob" uk-icon="icon: git-fork; ratio: 3.5"></a>
-            <h3 class="uk-text-center">Book</h3>
-            <div class="uk-navbar-center-right"><div>
-                <ul class="uk-navbar-nav">
-                    <li><a href="#medication">Medication</a></li>
-                    <li><a href="#insure">Insurance Information</a></li>
-                </ul>
-            </div></div>
+            </div>
 
-        </div>
-        <div class="uk-navbar-right">
+<div class="uk-navbar-right">
+    {{!-- add heart icon for the logo --}}
+    <i class="fas fa-heartbeat"></i>    
+    {{!-- <a class="uk-navbar-item uk-icon uk-text-primary"style="color: white; padding:0px;" href="#hob" uk-icon="icon: heart; ratio: 3"></a> --}}
+        <ul class="uk-navbar-nav">
+            <li><a class="uk-text-light" href="#hob"><h1 style="margin: 0px;" class="uk-text-middle">Health Code</h1></a></li>
+        </ul>
 
-            <ul class="uk-navbar-nav">
-                <li><a href="/">Logout</a></li>
-            </ul>
+    </div>
 
-        </div>
     </nav>
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div class="uk-container uk-center" id ="history">
@@ -114,13 +111,14 @@
                 </div>
             </div>
         </div>
-       
+    <span id="appt"></span>  
     <hr class="uk-divider-icon">
+
         
 
     {{!-- </div> --}}
 
-    <div class="uk-container" >
+    <div class="uk-container">
         
 
         <!-- This is the modal -->
@@ -161,7 +159,7 @@
 
 
 
-<div class="uk-container uk-center" id="appt">
+<div class="uk-container uk-center">
     
 
 
@@ -182,7 +180,7 @@
            <div class="">
                 {{!-- <div class="uk-card uk-card-large uk-card-default uk-card-body"> --}}
                 
-                   <div class="uk-panel uk-panel-scrollable ">
+                   <div class="uk-panel uk-panel-scrollable">
                         <ul class="uk-list appointment">
                             
                         </ul>
@@ -348,7 +346,7 @@
 </div>
 
 <article class="uk-comment uk-comment-primary footer">
-    <h2>Health Book</h2>
+    <h2>Health Code</h2>
     <p class ="uk-text-center footer-descrip">For more information about the creators:</p>
     <div class="uk-child-width-1-4@s" uk-grid>
         <div>
