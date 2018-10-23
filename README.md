@@ -7,3 +7,17 @@
         medical procedures. With Health Code you can keep all your health information at your finger tips, including, 
         but not limited to, setting up new appointments and a list of medications you are allergic to. Here at Health Code
         we strive to minimize the amount of medical mixups, regardless of how serious or trivial they may be.
+        
+# Built With
+
+            *HTML
+            *CSS
+            *UIKit
+            *Handlebars
+            *Javascript
+            *jQuery
+            *Sequelize
+            *Express
+            *mySQL
+            *Node.js
+            *Passport.js
